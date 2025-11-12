@@ -6,6 +6,11 @@
     "EXPLORE": "Explorar",
     "FAVORITES": "Mis Favoritos"
   },
+  "FILMS": {
+    "POPULAR": "Populares",
+    "TOP_RATED": "Mejor valoradas",
+    "UPCOMING": "Próximamente"
+  },
   "SEARCH": {
     "PLACEHOLDER": "Buscar películas...",
     "CLEAR": "Borrar búsqueda"
@@ -20,7 +25,8 @@
     "CANCEL": "Cancelar"
   },
   "MESSAGE": {
-    "EMPTY_RESULTS": "No se encontraron películas",
-    "ERROR": "Ocurrió un error"
+    "LOADING": "Cargando...",
+    "EMPTY_RESULTS": "No se encontraron resultados.",
+    "ERROR": "Ocurrió un error. Inténtalo de nuevo."
   }
 }

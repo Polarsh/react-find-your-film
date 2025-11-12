@@ -6,6 +6,11 @@
     "EXPLORE": "Explore",
     "FAVORITES": "My Favorites"
   },
+  "FILMS": {
+    "POPULAR": "Popular",
+    "TOP_RATED": "Top Rated",
+    "UPCOMING": "Upcoming"
+  },
   "SEARCH": {
     "PLACEHOLDER": "Search movies...",
     "CLEAR": "Clear search"
@@ -20,7 +25,8 @@
     "CANCEL": "Cancel"
   },
   "MESSAGE": {
-    "EMPTY_RESULTS": "No movies found",
-    "ERROR": "Something went wrong"
+    "LOADING": "Loading...",
+    "EMPTY_RESULTS": "No results found.",
+    "ERROR": "Something went wrong. Please try again."
   }
 }
