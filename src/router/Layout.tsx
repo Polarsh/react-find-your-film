@@ -1,17 +1,18 @@
 import { Outlet } from "react-router-dom";
 
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+
 export default function Layout() {
   return (
-    <div className=" min-h-screen flex flex-col bg-gray-950 text-white">
-      <header>Header</header>
+    <div className="min-h-screen flex flex-col bg-gray-950 text-white">
+      <Navbar />
 
-      <main className="flex-1">
+      <main className="flex-1 w-full container mx-auto px-4 py-6">
         <Outlet />
       </main>
 
-      <footer className="text-center py-4 text-gray-500 text-sm">
-        © {new Date().getFullYear()} Find Your Film — Proyecto de portafolio
-      </footer>
+      <Footer />
     </div>
   );
 }
