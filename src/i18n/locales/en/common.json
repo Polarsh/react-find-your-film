@@ -1,0 +1,26 @@
+{
+  "APP": {
+    "BRAND": "Find Your Film"
+  },
+  "NAV": {
+    "EXPLORE": "Explore",
+    "FAVORITES": "My Favorites"
+  },
+  "SEARCH": {
+    "PLACEHOLDER": "Search movies...",
+    "CLEAR": "Clear search"
+  },
+  "LANG": {
+    "EN": "English",
+    "ES": "Spanish",
+    "SELECT": "Select language"
+  },
+  "BUTTON": {
+    "SAVE": "Save",
+    "CANCEL": "Cancel"
+  },
+  "MESSAGE": {
+    "EMPTY_RESULTS": "No movies found",
+    "ERROR": "Something went wrong"
+  }
+}

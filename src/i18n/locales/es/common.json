@@ -1,0 +1,26 @@
+{
+  "APP": {
+    "BRAND": "Find Your Film"
+  },
+  "NAV": {
+    "EXPLORE": "Explorar",
+    "FAVORITES": "Mis Favoritos"
+  },
+  "SEARCH": {
+    "PLACEHOLDER": "Buscar películas...",
+    "CLEAR": "Borrar búsqueda"
+  },
+  "LANG": {
+    "EN": "Inglés",
+    "ES": "Español",
+    "SELECT": "Seleccionar idioma"
+  },
+  "BUTTON": {
+    "SAVE": "Guardar",
+    "CANCEL": "Cancelar"
+  },
+  "MESSAGE": {
+    "EMPTY_RESULTS": "No se encontraron películas",
+    "ERROR": "Ocurrió un error"
+  }
+}
