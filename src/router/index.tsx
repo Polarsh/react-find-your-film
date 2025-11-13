@@ -4,6 +4,8 @@ import Layout from "./Layout";
 
 import CommingSoon from "../pages/CommingSoon";
 import Home from "../pages/Home";
+import Movies from "../pages/Movies";
+import Favorites from "../pages/Favorites";
 
 export const router = createBrowserRouter([
   {
@@ -11,6 +13,10 @@ export const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
+
+      { path: "/movies", element: <Movies /> },
+
+      { path: "/favorites", element: <Favorites /> },
 
       { path: "*", element: <CommingSoon /> },
     ],
