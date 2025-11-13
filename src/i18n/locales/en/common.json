@@ -3,7 +3,10 @@
     "BRAND": "Find Your Film"
   },
   "NAV": {
+    "HOME": "Home",
     "EXPLORE": "Explore",
+    "MOVIES": "Movies",
+    "SERIES": "Series",
     "FAVORITES": "My Favorites"
   },
   "FILMS": {

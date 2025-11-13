@@ -13,7 +13,10 @@ export default function Navbar() {
   const { t } = useTranslation();
 
   const links = [
+    { label: t("NAV.HOME"), to: "/" },
     { label: t("NAV.EXPLORE"), to: "/explore" },
+    { label: t("NAV.MOVIES"), to: "/movies" },
+    { label: t("NAV.SERIES"), to: "/series" },
     { label: t("NAV.FAVORITES"), to: "/favorites" },
   ];
 
