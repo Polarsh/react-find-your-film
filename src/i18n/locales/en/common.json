@@ -30,6 +30,7 @@
   "MESSAGE": {
     "LOADING": "Loading...",
     "EMPTY_RESULTS": "No results found.",
+    "EMPTY_FAVORITES": "You don't have any favorite movies yet.",
     "ERROR": "Something went wrong. Please try again."
   }
 }

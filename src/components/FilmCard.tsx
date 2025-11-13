@@ -1,19 +1,14 @@
-import { useState } from "react";
-
 import { FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 
 import type { Film } from "../types/Film";
+import { useFavoriteFilm } from "../hooks/useFavoriteFilm";
 
 export default function FilmCard({ film }: { film: Film }) {
-  const { title, posterUrl, voteAverage } = film;
+  const { id, title, posterUrl, voteAverage } = film;
 
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  function toogleFavorite() {
-    setIsFavorite(!isFavorite);
-  }
+  const { isFavorite, toggleFavorite } = useFavoriteFilm();
 
   return (
     <div className=" w-full md:max-w-64">
@@ -32,11 +27,11 @@ export default function FilmCard({ film }: { film: Film }) {
           <button
             type="button"
             aria-label={
-              isFavorite ? "Quitar de favoritos" : "Agregar a favoritos"
+              isFavorite(id) ? "Quitar de favoritos" : "Agregar a favoritos"
             }
-            onClick={toogleFavorite}
+            onClick={() => toggleFavorite(film)}
             className="absolute right-2 top-2 inline-flex hover:cursor-pointer h-8 w-8 items-center justify-center rounded-full bg-zinc-900/70 text-white backdrop-blur hover:bg-zinc-900/90">
-            {isFavorite ? (
+            {isFavorite(id) ? (
               <FaHeart className={`h-4 w-4 text-red-500`} />
             ) : (
               <FaRegHeart className={`h-4 w-4 text-white`} />
