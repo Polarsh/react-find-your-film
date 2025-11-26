@@ -11,7 +11,7 @@ export interface Film {
   originalLanguage: string;
   adult: boolean;
   video: boolean;
-
+  resourceUrl: string;
   posterUrl: string;
   backdropUrl: string;
   releaseDateFormatted: string;

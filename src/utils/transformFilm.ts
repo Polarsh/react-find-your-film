@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import slugify from "slugify";
 import type { Film } from "../types/Film";
 
 const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/";
@@ -21,6 +22,11 @@ export function transformFilm(apiFilm: any): Film {
       })
     : "Fecha desconocida";
 
+  const resourceUrl = `/movies/${slugify(apiFilm.title, {
+    lower: true,
+    strict: true,
+  })}-${apiFilm.id}`;
+
   return {
     id: apiFilm.id,
     title: apiFilm.title,
@@ -34,6 +40,7 @@ export function transformFilm(apiFilm: any): Film {
     originalLanguage: apiFilm.original_language,
     adult: apiFilm.adult,
     video: apiFilm.video,
+    resourceUrl,
 
     // derivados
     posterUrl,
