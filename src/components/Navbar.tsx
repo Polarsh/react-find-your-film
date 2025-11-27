@@ -28,7 +28,7 @@ export default function Navbar() {
           <NavLink
             to="/"
             end
-            className="font-heading text-h3 font-bold text-white">
+            className="font-heading text-h2 font-bold text-white">
             Find Your Film
           </NavLink>
 
