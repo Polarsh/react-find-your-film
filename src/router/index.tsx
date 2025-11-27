@@ -6,6 +6,7 @@ import CommingSoon from "../pages/CommingSoon";
 import Home from "../pages/Home";
 import Movies from "../pages/Movies";
 import Favorites from "../pages/Favorites";
+import MovieDetail from "../pages/MovieDetail";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
       { index: true, element: <Home /> },
 
       { path: "/movies", element: <Movies /> },
+      { path: "/movies/:movieSlug", element: <MovieDetail /> },
 
       { path: "/favorites", element: <Favorites /> },
 

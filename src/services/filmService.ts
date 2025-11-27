@@ -1,13 +1,14 @@
 import type { Film } from "../types/Film";
 import { httpHelper } from "../utils/httpHelper";
 
-export async function getPopularFilms(page = 1): Promise<Film[]> {
-  const data = await httpHelper.get("/movie/popular", {
-    language: "en-US",
-    page,
-  });
+export async function fetchMovieById(movieId: string): Promise<Film> {
+  const data = await httpHelper.get<Film>(`/movie/${movieId}`);
 
-  console.log("getPopularFilms", data);
+  return data;
+}
 
-  return [];
+export async function fetchVideosByMovieId(movieId: string): Promise<any> {
+  const data = await httpHelper.get<Film>(`/movie/${movieId}/videos`);
+
+  return data;
 }

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import slugify from "slugify";
 import type { Film } from "../types/Film";
+import { buildResourcePath } from "./utils";
 
 const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/";
 
@@ -22,10 +22,22 @@ export function transformFilm(apiFilm: any): Film {
       })
     : "Fecha desconocida";
 
-  const resourceUrl = `/movies/${slugify(apiFilm.title, {
-    lower: true,
-    strict: true,
-  })}-${apiFilm.id}`;
+  const resourceUrl = buildResourcePath("movie", apiFilm.title, apiFilm.id);
+
+  const genres = apiFilm.genres?.map((genre: any) => ({
+    id: genre.id,
+    name: genre.name,
+  }));
+
+  const productionCompanies = apiFilm.production_companies?.map(
+    (company: any) => ({
+      id: company.id,
+      name: company.name,
+      logoUrl: company.logo_path
+        ? `${TMDB_IMAGE_BASE}w200${company.logo_path}`
+        : null,
+    })
+  );
 
   return {
     id: apiFilm.id,
@@ -36,16 +48,19 @@ export function transformFilm(apiFilm: any): Film {
     voteAverage: apiFilm.vote_average,
     voteCount: apiFilm.vote_count,
     popularity: apiFilm.popularity,
-    genreIds: apiFilm.genre_ids ?? [],
-    originalLanguage: apiFilm.original_language,
-    adult: apiFilm.adult,
-    video: apiFilm.video,
+    adult: apiFilm.adult, //
+    video: apiFilm.video, //
     resourceUrl,
+    // Para MovieDetail
+    genres: genres ?? null, //
+    productionCompanies: productionCompanies ?? null, //
 
     // derivados
+    oficialUrl: apiFilm.homepage || null,
     posterUrl,
     backdropUrl,
     releaseDateFormatted,
+    videoList: apiFilm.videoList ?? [],
   };
 }
 
