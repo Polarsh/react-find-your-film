@@ -2,6 +2,11 @@
 const BASE_URL = "https://api.themoviedb.org/3";
 const ACCESS_TOKEN = import.meta.env.VITE_TMDB_ACCESS_TOKEN as string;
 
+function getLanguage() {
+  const lang = localStorage.getItem("lang");
+  return lang === "es" ? "es-ES" : "en-US";
+}
+
 async function get<T>(
   endpoint: string,
   params: Record<string, string | number | boolean> = {}
@@ -12,6 +17,8 @@ async function get<T>(
   Object.entries(params).forEach(([key, value]) => {
     url.searchParams.append(key, String(value));
   });
+
+  url.searchParams.append("language", getLanguage());
 
   const response = await fetch(url.toString(), {
     method: "GET",

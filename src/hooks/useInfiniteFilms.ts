@@ -1,21 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { useTranslation } from "react-i18next";
 import type { Film } from "../types/Film";
 
 import { transformFilm } from "../utils/transformFilm";
-import { useApiLanguage } from "./useApiLanguage";
 import { useInfiniteTMDB } from "./useInfiniteTMDB";
 
 function makeInfiniteFilmsHook(endpoint: string) {
   return function useInfiniteFilms() {
-    const { language, region } = useApiLanguage();
+    const { i18n } = useTranslation();
 
     return useInfiniteTMDB<any, Film>({
       endpoint,
-      baseParams: {
-        language, // ej: "es-ES" / "en-US"
-        ...(region ? { region } : {}), // ej: "ES" / "US"
-      },
-      queryKey: ["films", endpoint, language, region],
+      queryKey: ["films", endpoint, i18n.language],
       selectItem: transformFilm,
     });
   };
